@@ -9,6 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:#e3f9ff;
 }
 
 .calculator{
@@ -50,6 +51,7 @@ button{
     border: none;
     border-radius: 5px;
 }
+
 .btn-yellow{
    background-color: rgb(245, 146, 62);
    color: white;
@@ -61,8 +63,9 @@ button{
 .btn-equal{
    background-color: green;
    color: white;
+   width: 50%;
 }
-.btn-clear{
+.btn-clear, .btn-delete{
    background-color: red;
    color: white;
 }

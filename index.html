@@ -30,8 +30,11 @@
             <button type="button" class="btn btn-gray" data-num="0">0</button>
             <button type="button" class="btn btn-gray" data-num=".">.</button>
 
-            <button type="button" class="btn btn-equal" data-num="=">=</button>
-            <button type="button" class="btn btn-clear" data-num="C">C</button>
+            <button type="button" class="btn btn-gray" data-num="00">00</button>
+
+            <button type="button" class="btn btn-clear" data-num="Ac">Ac</button>
+            <button type="button" class="btn btn-delete" data-num="">De</button>
+            <button type="button" class="btn btn-equal" data-num="">=</button>
         </section>
     </header>
 
@@ -41,16 +44,17 @@
         const buttons = document.querySelectorAll(".btn")
         let equal = document.querySelector(".btn-equal")
         const clear = document.querySelector(".btn-clear")
+        const delet = document.querySelector(".btn-delete")
       
 
         buttons.forEach((button) =>{
-            button.addEventListener("click", (e) =>{
-              let value = e.target.dataset.num;
+            button.addEventListener("click", (clicked) =>{
+              let value = clicked.target.dataset.num;
               screen.value += value;
             })
         });
 
-       equal.addEventListener("click", (e) =>{
+       equal.addEventListener("click", () =>{
         if(screen.value === "" ){
             screen.value === ""
         }else{
@@ -59,8 +63,11 @@
         }
        })
 
-        clear.addEventListener("click", function() {
+        clear.addEventListener("click", () =>{
             screen.value = ""
+        })
+        delet.addEventListener("click", () =>{
+            screen.value = screen.value.toString().slice(0, -1)
         })
 
         })();
